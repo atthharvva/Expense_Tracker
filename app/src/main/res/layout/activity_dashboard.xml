@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/background"
+    android:layout_height="match_parent"
+    tools:context=".DashboardActivity">
+
+    <RelativeLayout
+        android:id="@+id/actionBar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/teal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Expense Manager"
+            android:textStyle="bold"
+            android:textSize="22dp"
+            android:layout_centerInParent="true"
+            android:id="@+id/heading"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/heading"
+            android:layout_marginTop="18dp"
+            android:layout_marginRight="50dp"
+            android:id="@+id/logout_btn"
+            android:src="@drawable/baseline_logout_24"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/heading"
+            android:layout_marginTop="18dp"
+            android:layout_marginLeft="50dp"
+            android:id="@+id/refresh_btn"
+            android:src="@drawable/baseline_refresh_24"
+            />
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="165dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/card"
+        app:cardCornerRadius="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:backgroundTint="@color/grey"
+        android:layout_below="@id/actionBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Income"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="0000"
+                    android:id="@+id/income_db"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/green"
+                    android:textSize="18sp"/>
+                
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Expense"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="0000"
+                    android:id="@+id/expense_db"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/red"
+                    android:textSize="18sp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Balance"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="0000"
+                    android:id="@+id/balance_db"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_below="@id/card"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/history"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.core.widget.NestedScrollView>
+
+<!--    <de.hdodenhof.circleimageview.CircleImageView-->
+<!--        android:layout_width="60dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:id="@+id/add_fbtn"-->
+<!--        android:src="@drawable/baseline_add_24"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:layout_marginBottom="50dp"-->
+<!--        android:layout_marginRight="30dp"-->
+<!--        app:civ_circle_background_color="@color/grey"-->
+<!--        app:civ_border_width="1dp"-->
+<!--        app:civ_border_color="@color/teal"-->
+<!--        app:civ_shadow="true"-->
+<!--    />-->
+
+        <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/add_fbtn"
+        android:src="@drawable/baseline_add_24"
+        android:backgroundTint="@color/teal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="30dp"
+        />
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="145dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:backgroundTint="@color/teal"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        app:cardCornerRadius="50dp"-->
+<!--        android:layout_marginBottom="65dp"-->
+<!--        android:layout_marginRight="30dp">-->
+
+<!--&lt;!&ndash;        <RelativeLayout&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/add_fbtn"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:paddingLeft="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:paddingTop="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="match_parent">&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;&lt;!&ndash;            <ImageView&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                android:layout_width="wrap_content"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                android:id="@+id/add_img"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                android:src="@drawable/baseline_add_24"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                />&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;            <TextView&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                android:layout_width="wrap_content"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                android:text="Add Transaction"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                android:textColor="@color/white"&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                android:layout_toRightOf="@id/add_img"/>&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;        </RelativeLayout>&ndash;&gt;-->
+<!--        -->
+<!--        -->
+
+<!--    </androidx.cardview.widget.CardView>-->
+
+</RelativeLayout>
+
+

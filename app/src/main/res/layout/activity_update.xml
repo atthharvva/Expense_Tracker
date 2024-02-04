@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    tools:context=".AddTransactionActivity">
+
+    <RelativeLayout
+        android:id="@+id/actionBar_transaction"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/teal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update Transaction"
+            android:textStyle="bold"
+            android:textSize="22dp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="30dp"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="100dp"
+        android:id="@+id/card"
+        app:cardCornerRadius="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:backgroundTint="@color/grey"
+        android:layout_below="@id/actionBar_transaction">
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:padding="15dp"
+            android:id="@+id/udt_amount"
+            android:hint="Enter Amount"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:inputType="number"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginTop="65dp"
+            android:padding="15dp"
+            android:id="@+id/udt_note"
+            android:hint="Note"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="160dp">
+
+            <CheckBox
+                android:layout_width="8dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/expense_cb"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:text="Expense"
+                android:layout_marginLeft="20dp"
+                android:buttonTint="@color/white"
+                />
+
+            <CheckBox
+                android:layout_width="8dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/income_cb"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:text="Income"
+                android:layout_marginLeft="20dp"
+                android:buttonTint="@color/white"
+                />
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:id="@+id/btn_updt"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/teal"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:id="@+id/btn_dlt"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/teal"
+        />
+
+
+
+</LinearLayout>

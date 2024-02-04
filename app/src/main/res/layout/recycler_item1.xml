@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:backgroundTint="@color/grey"
+    app:cardCornerRadius="25dp">
+
+    <View
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_margin="10dp"
+        android:id="@+id/priority1"
+        android:background="@drawable/green_shape"
+        android:layout_gravity="end"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/note1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="Your note"
+            android:textColor="@color/white"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/amount1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/note1"
+            android:text="amount"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/amount1"
+            android:id="@+id/date1"
+            android:layout_marginLeft="15dp"
+            android:text="25 October 2023 18:17"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
